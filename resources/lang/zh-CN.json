@@ -1,0 +1,22 @@
+{
+  "Id": "ID",
+  "Created at":"创建时间",
+  "Updated at":"更新时间",
+  "Name":"名称",
+  "Brief":"简介",
+  "Keyword":"关键字",
+  "Sort": "排序",
+  "Content": "内容",
+  "Status": "状态",
+  "Skill": "使用技能",
+  "Responsibility": "负责内容",
+  "Difficulty": "项目难点",
+  "Achievement": "项目成果",
+  "Begin at": "开始时间",
+  "End at": "结束时间",
+  "Image": "图片",
+  "Company": "公司",
+  "Position": "职位",
+  "Key": "标识",
+  "Value": "内容"
+}

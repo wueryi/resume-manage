@@ -1,0 +1,1 @@
+export const Host = "http://laravels.jishuai.xyz";
