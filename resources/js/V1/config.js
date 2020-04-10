@@ -1,1 +1,1 @@
-export const Host = "http://laravels.jishuai.xyz";
+export const Host = "https://resume.jishuai521.com";

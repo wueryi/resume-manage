@@ -82,7 +82,7 @@ class SkillController extends AdminController
     {
         $form = new Form(new Skill());
 
-        $form->text('brief', __('Brief'));
+//        $form->text('brief', __('Brief'));
         $form->textarea('content', __('Content'))->required();
         $form->text('keyword', __('Keyword'))->required();
         $form->number('sort', __('Sort'))->required();

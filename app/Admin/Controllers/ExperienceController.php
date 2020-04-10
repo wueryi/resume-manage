@@ -100,7 +100,7 @@ class ExperienceController extends AdminController
         $form->textarea('brief', __('Brief'))->required();
         $form->text('skill', __('Skill'))->required();
         $form->textarea('responsibility', __('Responsibility'))->required();
-        $form->textarea('difficulty', __('Difficulty'))->required();
+        $form->textarea('difficulty', __('Difficulty'));
         $form->textarea('achievement', __('Achievement'));
         $form->datetime('begin_at', __('Begin at'))->format("YYYY-MM")->required();
         $form->datetime('end_at', __('End at'))->format("YYYY-MM");
@@ -112,6 +112,11 @@ class ExperienceController extends AdminController
             ]
         )->default(1);
         $form->multipleImage('image', __('Image'))->sortable()->removable();
+        $form->saving(function (Form $form){
+            if (empty($form->image)) {
+                $form->image = json_encode([]);
+            }
+        });
 
         return $form;
     }

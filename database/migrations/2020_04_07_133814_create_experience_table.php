@@ -21,7 +21,7 @@ class CreateExperienceTable extends Migration
             $table->string("brief")->nullable(false)->default("")->comment("项目概述");
             $table->string("skill")->nullable(false)->default("")->comment("使用技能");
             $table->string("responsibility")->nullable(false)->default("")->comment("负责内容");
-            $table->string("difficulty")->nullable(false)->default("")->comment("项目难点");
+            $table->string("difficulty")->nullable()->default("")->comment("项目难点");
             $table->string("achievement")->nullable()->default("")->comment("项目成果");
             $table->string("begin_at")->nullable()->comment("开始时间");
             $table->string("end_at")->nullable()->comment("结束时间");

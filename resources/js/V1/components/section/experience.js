@@ -35,7 +35,7 @@ class Experience extends React.Component {
                             return (
                                 <div className="resume-item d-flex flex-column flex-md-row mb-5" key={key}>
                                     <div className="resume-content mr-auto">
-                                        <h3 className="mb-0">PteGo</h3>
+                                        <h3 className="mb-0">{experience[key].name}</h3>
                                         <div className="subheading mb-3">{experience[key].skill}</div>
                                         <div>
                                             <h6>项目概述:</h6>
@@ -45,10 +45,19 @@ class Experience extends React.Component {
                                             <h6>负责内容:</h6>
                                             <p>{experience[key].responsibility}</p>
                                         </div>
-                                        <div>
-                                            <h6>项目难点:</h6>
-                                            <p>{experience[key].difficulty}</p>
-                                        </div>
+
+                                        {
+                                            (()=>{
+                                                if (experience[key].difficulty) {
+                                                    return (
+                                                        <div>
+                                                            <h6>项目难点:</h6>
+                                                            <p>{experience[key].difficulty}</p>
+                                                        </div>
+                                                    )
+                                                }
+                                            })()
+                                        }
                                         {
                                             (()=>{
                                                 if (experience[key].achievement) {

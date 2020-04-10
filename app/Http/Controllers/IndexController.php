@@ -21,7 +21,7 @@ class IndexController extends Controller
     {
         $Skill = Skill::query()
             ->where('status', Skill::STATUS_ON)
-            ->orderBy("sort", "DESC")->orderBy("created_at", "DESC")
+            ->orderBy("sort", "ASC")->orderBy("created_at", "DESC")
             ->select(["brief", "content", "keyword"])
             ->get();
         return $this->respondWithSuccess($Skill);
@@ -31,7 +31,7 @@ class IndexController extends Controller
     {
         $Work = Work::query()
             ->where('status', Work::STATUS_ON)
-            ->orderBy("sort", "DESC")->orderBy("created_at", "DESC")
+            ->orderBy("sort", "ASC")->orderBy("created_at", "DESC")
             ->select(["company", "position", "responsibility", "begin_at", "end_at"])
             ->get();
         return $this->respondWithSuccess($Work);
@@ -41,7 +41,7 @@ class IndexController extends Controller
     {
         $Experience = Experience::query()
             ->where('status', Experience::STATUS_ON)
-            ->orderBy("sort", "DESC")->orderBy("created_at", "DESC")
+            ->orderBy("sort", "ASC")->orderBy("created_at", "DESC")
             ->select(["name", "brief", "skill", "responsibility", "difficulty", "achievement", "begin_at", "end_at", "image"])
             ->get();
         return $this->respondWithSuccess($Experience);
@@ -51,7 +51,7 @@ class IndexController extends Controller
     {
         $Evaluate = Evaluate::query()
             ->where('status', Evaluate::STATUS_ON)
-            ->orderBy("sort", "DESC")->orderBy("created_at", "DESC")
+            ->orderBy("sort", "ASC")->orderBy("created_at", "DESC")
             ->select(["content"])
             ->get();
         return $this->respondWithSuccess($Evaluate);
@@ -60,7 +60,7 @@ class IndexController extends Controller
     public function getInfo(){
         $Info = Info::query()
             ->where('status', Evaluate::STATUS_ON)
-            ->orderBy("sort", "DESC")->orderBy("created_at", "DESC")->select(["name", "key", "value"])->get()->toArray();
+            ->orderBy("sort", "ASC")->orderBy("created_at", "DESC")->select(["name", "key", "value"])->get()->toArray();
         $data = [];
         foreach($Info as $key => $value){
             $data[$value['key']] = $value;
